@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Чай</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Информация о чае</h1>
+        {% load static %}
+        <img src ="{% static 'tea/чай.jpg'%}" width="320" height="200" alt = "tea"><br>
+        {% block body %}
+    </header>
+
+
+    {% endblock body %}
+    <footer>
+        <br>
+        <input type="button" value="На главную" onClick='location.href="{% url "main" %}"'>
+    </footer>
+
+</body>
+</html>

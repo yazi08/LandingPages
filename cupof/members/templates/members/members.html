@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Добавление члена клуба</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    {% block heder %}
+    <h1>Регистрация членов клуба</h1>
+    {% endblock heder %}
+    {% load static %}
+        <img src ="{% static 'members/клуб.jpg'%}" width="320" height="200"  alt = "club"><br><br>
+    {% block body %}
+
+    <form method="POST">
+
+        <table  height="20" >
+        {% csrf_token %}
+        {{form}}
+
+        </table>
+
+        <input type="submit" value="Отправить">
+        <input type="button" value="На главную" onClick='location.href="{% url "main" %}"'>
+        <input type="button" value="Просмотр членов клуба" onClick='location.href="{% url "members_info" %}"'>
+
+    </form>
+    {% endblock body %}
+
+
+</body>
+</html>

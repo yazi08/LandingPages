@@ -1,0 +1,34 @@
+{% extends "members/members.html" %}
+
+{% block title %}
+    <title>Информация о членах клуба</title>
+{% endblock title %}
+
+{% block heder %}
+<h1>Информация о членах клуба</h1>
+{% endblock heder %}
+
+{% block body %}
+
+        <table border="1">
+        <tr>
+            <td>Имя</td>
+            <td>Предпочтения</td>
+
+        </tr>
+    {% for el in data %}
+        <tr>
+            <td>{{el.name}}</td>
+            <td>{{el.chai_or_coffee}}</td>
+
+        </tr>
+
+
+
+    {% endfor %}
+        </table>
+    <br>
+    <input type="button" value="Назад" onClick='location.href="{% url "members" %}"'>
+    <input type="button" value="На главную" onClick='location.href="{% url "main" %}"'>
+
+{% endblock body %}

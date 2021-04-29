@@ -1,0 +1,33 @@
+{% extends "coffee/coffee.html" %}
+
+
+{% block title %}
+    <title>Информация о кофе</title>
+{% endblock title %}
+
+
+{% block body %}
+
+        <table border="1">
+        <tr>
+            <td>Название</td>
+            <td>Тип</td>
+            <td>Цена за 100 г</td>
+            <td>фото</td>
+        </tr>
+    {% for el in data %}
+        <tr>
+            <td>{{el.name}}</td>
+            <td>{{el.type_coffee}}</td>
+            <td>{{el.price}}</td>
+
+            <td> <img src="{{el.img.url}}" alt ="кофе" width="320" height="200"></td>
+
+        </tr>
+
+
+
+    {% endfor %}
+        </table>
+
+{% endblock body %}

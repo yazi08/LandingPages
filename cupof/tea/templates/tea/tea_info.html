@@ -1,0 +1,30 @@
+{% extends "tea/tea.html" %}
+
+{% block title %}
+    <title>Информация о чае</title>
+{% endblock title %}
+
+
+{% block body %}
+
+        <table border="1">
+        <tr>
+            <td>Название</td>
+            <td>Тип</td>
+            <td>Цена за 100 г</td>
+            <td>Картинка</td>
+        </tr>
+    {% for el in data %}
+        <tr>
+            <td>{{el.name}}</td>
+            <td>{{el.type_chai}}</td>
+            <td>{{el.price}}</td>
+            <td> <img src="{{el.photo.url}}" alt ="чай" width="320" height="200"></td>
+        </tr>
+
+
+
+
+    {% endfor %}
+        </table>
+{% endblock body %}
